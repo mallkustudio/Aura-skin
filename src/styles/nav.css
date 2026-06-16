@@ -57,34 +57,76 @@
   transform: translateY(-50%) scaleX(1);
 }
 
+/* ---- Body: progress rail + links, side by side ---- */
+.nav__body {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.nav__progress {
+  position: relative;
+  width: 1px;
+  flex-shrink: 0;
+  background: rgba(245, 240, 235, 0.2);
+}
+
+.nav__progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgba(255, 255, 255, 0.85);
+  transition: height 0.1s linear;
+}
+
 /* ================================================================
    TEMA OSCURO — sobre el hero (video/imagen oscura)
    ================================================================ */
 .site-header[data-theme="dark"] .nav__links a {
-  color: rgba(245, 240, 235, 0.6);
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .site-header[data-theme="dark"] .nav__links a:hover {
-  color: #F5F0EB;
+  color: #FFFFFF;
 }
 
 .site-header[data-theme="dark"] .nav__links a::before {
-  background: rgba(245, 240, 235, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.site-header[data-theme="dark"] .nav__progress {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.site-header[data-theme="dark"] .nav__progress-fill {
+  background: rgba(255, 255, 255, 0.85);
 }
 
 /* ================================================================
    TEMA CLARO — sobre secciones de fondo cream
    ================================================================ */
 .site-header[data-theme="light"] .nav__links a {
-  color: var(--color-text-muted);
-}
-
-.site-header[data-theme="light"] .nav__links a:hover {
   color: var(--color-text);
 }
 
+.site-header[data-theme="light"] .nav__links a:hover {
+  color: var(--color-accent);
+}
+
 .site-header[data-theme="light"] .nav__links a::before {
-  background: var(--color-text-muted);
+  background: var(--color-text);
+}
+
+.site-header[data-theme="light"] .nav__progress {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.site-header[data-theme="light"] .nav__progress-fill {
+  background: var(--color-text);
 }
 
 /* ================================================================

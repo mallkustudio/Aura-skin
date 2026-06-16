@@ -23,4 +23,15 @@ export function initNav() {
   });
 
   sections.forEach(section => observer.observe(section));
+
+  const fill = document.querySelector('.nav__progress-fill');
+  if (fill) {
+    const updateProgress = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+      fill.style.height = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
 }
