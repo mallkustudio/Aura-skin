@@ -7,13 +7,10 @@ export function initNav() {
 
   header.setAttribute('data-theme', 'dark');
 
-  let currentSection = sections[0];
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         header.setAttribute('data-theme', entry.target.dataset.navTheme);
-        currentSection = entry.target;
       }
     });
   }, {
@@ -26,9 +23,14 @@ export function initNav() {
   const fill = document.querySelector('.nav__progress-fill');
   if (fill) {
     const updateProgress = () => {
-      const scrolledIn = window.scrollY - currentSection.offsetTop;
-      const pct = Math.min(100, Math.max(0, (scrolledIn / currentSection.offsetHeight) * 100));
-      fill.style.height = pct + '%';
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      // Ajustar windowSize (10–20) para cambiar el alto visible del fill
+      const windowSize = 15;
+      const fillTop = Math.max(0, scrollPct - windowSize / 2);
+      const fillBottom = Math.min(100, scrollPct + windowSize / 2);
+      fill.style.top = fillTop + '%';
+      fill.style.height = (fillBottom - fillTop) + '%';
     };
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
