@@ -87,10 +87,3 @@ main {
   max-width: none;
 }
 
-/* ── Mobile nav sidebar — offset centralizado ── */
-@media (max-width: 900px) {
-  main { padding-left: 130px; }
-}
-@media (max-width: 480px) {
-  main { padding-left: 90px; }
-}

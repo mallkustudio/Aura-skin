@@ -114,12 +114,6 @@
 }
 
 /* ---- Responsive ---- */
-@media (max-width: 900px) {
-  .contacto__inner {
-    padding-left: var(--space-4);
-  }
-}
-
 @media (max-width: 640px) {
   .contacto__actions {
     grid-template-columns: 1fr;
@@ -138,7 +132,6 @@
 
 @media (max-width: 480px) {
   .contacto__inner {
-    padding-left: var(--space-4);
     padding-right: var(--space-4);
   }
 }

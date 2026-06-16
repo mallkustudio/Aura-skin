@@ -125,12 +125,6 @@
 
 /* ---- Responsive ---- */
 
-@media (max-width: 900px) {
-  .experiencias__inner {
-    padding-left: var(--space-4);
-  }
-}
-
 /* Collapse editorial layout to simple 2-column grid */
 @media (max-width: 1000px) {
   .experiencias__grid {
@@ -177,7 +171,6 @@
 
 @media (max-width: 480px) {
   .experiencias__inner {
-    padding-left: var(--space-4);
     padding-right: var(--space-4);
   }
 

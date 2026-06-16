@@ -76,10 +76,6 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .space__inner {
-    padding-left: var(--space-4);
-  }
-
   .space__grid {
     height: 440px;
   }
@@ -108,7 +104,6 @@
 
 @media (max-width: 480px) {
   .space__inner {
-    padding-left: var(--space-4);
     padding-right: var(--space-4);
   }
 }
