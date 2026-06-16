@@ -72,6 +72,20 @@
   overflow: hidden;
   border-radius: 12px;
   background: var(--color-border);
+  position: relative;
+}
+
+/* Overlay lateral izquierdo para garantizar contraste del nav sobre imágenes oscuras */
+.exp-card__image-wrap[data-brightness="dark"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent);
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Cards 4–5 live in the auto row — aspect-ratio drives the row height */
