@@ -1,0 +1,141 @@
+.que-somos {
+  padding: var(--space-16) 0;
+  background: var(--color-bg);
+}
+
+.que-somos__inner {
+  max-width: 1640px;
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+/* ---- Text block ---- */
+.que-somos__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+.que-somos__title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.que-somos__desc {
+  font-size: var(--text-base);
+  font-weight: 300;
+  line-height: var(--leading-loose);
+  color: var(--color-text-muted);
+}
+
+/* ---- Asymmetric image collage ---- */
+/* Structure: img1 (tall portrait, left) | stack of img2+img3 (right, offset down) */
+.que-somos__gallery {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.que-somos__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-10);
+}
+
+.qs-img {
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0;
+  background: var(--color-border);
+}
+
+.qs-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.qs-img:hover img {
+  transform: scale(1.04);
+}
+
+.qs-img--main {
+  aspect-ratio: 3 / 4;
+}
+
+.qs-img--b {
+  aspect-ratio: 4 / 3;
+}
+
+.qs-img--c {
+  aspect-ratio: 4 / 3;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1000px) {
+  .que-somos__inner {
+    gap: var(--space-10);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .que-somos__inner {
+    padding-left: var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .que-somos__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .que-somos__title {
+    font-size: var(--text-2xl);
+  }
+
+  .que-somos__stack {
+    padding-top: 0;
+  }
+
+}
+
+@media (max-width: 640px) {
+  .que-somos__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .que-somos__stack {
+    flex-direction: row;
+  }
+
+  .qs-img--main {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .que-somos__inner {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .que-somos__stack {
+    flex-direction: column;
+  }
+}

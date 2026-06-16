@@ -1,0 +1,18 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* Design tokens first — everything else depends on them */
+@import './styles/variables.css';
+@import './styles/reset.css';
+
+/* Components */
+@import './styles/nav.css';
+@import './styles/hero.css';
+
+/* Sections */
+@import './styles/sections.css';
+@import './styles/space.css';
+@import './styles/que-somos.css';
+@import './styles/experiencias.css';
+@import './styles/opiniones.css';
+@import './styles/contacto.css';

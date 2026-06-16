@@ -1,0 +1,114 @@
+.space {
+  padding: var(--space-16) 0;
+  background: var(--color-bg);
+}
+
+.space__inner {
+  max-width: 1640px;
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+/* Header */
+.space__header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.space__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+.space__title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.space__desc {
+  font-size: var(--text-base);
+  font-weight: 300;
+  line-height: var(--leading-loose);
+  color: var(--color-text-muted);
+}
+
+/* Photo grid: 1 tall left + 2 stacked right */
+.space__grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-3);
+  height: 600px;
+}
+
+.space__item {
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0;
+  background: var(--color-border);
+}
+
+.space__item--main {
+  grid-row: span 2;
+}
+
+.space__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.space__item:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .space__inner {
+    padding-left: var(--space-4);
+  }
+
+  .space__grid {
+    height: 440px;
+  }
+}
+
+@media (max-width: 640px) {
+  .space__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 200px 200px;
+    height: auto;
+    gap: var(--space-2);
+  }
+
+  .space__item--main {
+    grid-row: auto;
+  }
+
+  .space__title {
+    font-size: var(--text-2xl);
+  }
+
+  .space__header {
+    margin-bottom: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .space__inner {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}

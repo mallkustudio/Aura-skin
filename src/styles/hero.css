@@ -1,0 +1,202 @@
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*
+    Atmospheric placeholder — three radial "light sources" over a warm dark base.
+    Simulates the quality of soft, diffused spa photography: warm light from above,
+    subtle warmth in the lower corners, a rich near-black core.
+    When hero.mp4 / hero-fallback.jpg are added, this sits behind them gracefully.
+  */
+  background:
+    radial-gradient(ellipse 85% 55% at 50% 0%,   rgba(205, 162, 105, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 75% at 4%  92%,  rgba(148, 104,  60, 0.11) 0%, transparent 54%),
+    radial-gradient(ellipse 60% 48% at 96% 58%,  rgba(112,  82,  46, 0.09) 0%, transparent 50%),
+    linear-gradient(175deg, #201912 0%, #0E0907 40%, #131009 65%, #1D1511 100%);
+}
+
+/* Film-grain texture — adds tactile depth to both the gradient placeholder
+   and any real video/image behind it. Positioned between media and overlay. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 192px 192px;
+  opacity: 0.032;
+  pointer-events: none;
+}
+
+/* Wave transition into the section below — cream fill curves up from the bottom edge */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 15;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 72' preserveAspectRatio='none'%3E%3Cpath d='M0,48 C240,72 480,24 720,48 C960,72 1200,24 1440,48 L1440,72 L0,72 Z' fill='%23F7F4EE'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* ---- Layer 1: Media (video + fallback image) ---- */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-base);
+}
+
+/* Fallback image — sits behind the video, shows if video fails */
+.hero__fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1; /* explicitly above fallback img (z-index: auto) within .hero__media */
+}
+
+/* ---- Layer 2: Overlay ---- */
+/* Two-axis vignette:
+   - Left edge: stronger dark band so white nav text is always readable
+   - Top/bottom: standard framing vignette */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background:
+    linear-gradient(to right,  rgba(14, 10, 7, 0.58) 0%, transparent 22%),
+    linear-gradient(to bottom, rgba(14, 10, 7, 0.38) 0%, rgba(14, 10, 7, 0.18) 42%,
+                               rgba(14, 10, 7, 0.18) 58%, rgba(14, 10, 7, 0.52) 100%);
+}
+
+/* ---- Layer 3: Content ---- */
+.hero__content {
+  position: relative;
+  z-index: var(--z-content);
+  text-align: center;
+  padding: 0 var(--container-pad);
+  max-width: 860px;
+
+  opacity: 0;
+  transform: translateY(24px);
+  animation: hero-reveal 1.4s cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
+}
+
+@keyframes hero-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__logo {
+  display: block;
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto var(--space-10);
+  opacity: 0.92;
+}
+
+.hero__headline {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-5);
+}
+
+/* Thin decorative separator between headline and subheadline */
+.hero__subheadline {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  position: relative;
+  padding-top: var(--space-6);
+}
+
+.hero__subheadline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.30);
+}
+
+/* ---- Scroll indicator — pure line, no text ---- */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-content);
+  width: 1px;
+  height: 52px;
+  overflow: hidden;
+}
+
+/* Animated fill that reveals and hides top-to-bottom */
+.hero__scroll::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  animation: scroll-line 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scroll-line {
+  0%   { transform: translateY(-100%); }
+  50%  { transform: translateY(0%); }
+  100% { transform: translateY(100%); }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .hero__logo {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__logo {
+    max-width: 160px;
+  }
+
+  .hero__subheadline {
+    letter-spacing: 0.18em;
+  }
+}
