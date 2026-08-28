@@ -1,5 +1,5 @@
 .experiencias {
-  padding: var(--space-16) 0;
+  padding: calc(var(--space-16) / 2) 0; /* 120px -> 60px */
   background: var(--color-bg);
 }
 
@@ -144,6 +144,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .exp-card__video-wrap {
@@ -161,27 +163,20 @@
   object-fit: cover;
 }
 
-.exp-card__video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
-}
-
 .exp-card__content {
-  position: relative;
-  z-index: 1;
   padding: var(--space-6);
-  background: var(--color-bg-dark);
-  color: var(--color-bg); /* #F7F4EE — texto claro sobre panel oscuro */
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 .exp-card__title {
   font-family: var(--font-serif);
   font-size: var(--text-lg);
   font-weight: 400;
-  color: inherit;
+  color: var(--color-text);
   line-height: var(--leading-snug);
-  margin-bottom: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg);
 }
 
 .exp-card__desc {

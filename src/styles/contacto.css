@@ -1,5 +1,5 @@
 .contacto {
-  padding: var(--space-16) 0;
+  padding: calc(var(--space-16) / 2) 0; /* 120px -> 60px */
   background: var(--color-bg);
 }
 
