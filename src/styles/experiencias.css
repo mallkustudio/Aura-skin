@@ -161,6 +161,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 .exp-card__content {
@@ -256,26 +257,11 @@
   }
 }
 
-@media (max-width: 640px) {
-  .experiencias__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
-  }
-
-  .experiencias__title {
-    font-size: var(--text-2xl);
-  }
-
-  .experiencias__header {
-    margin-bottom: var(--space-8);
-  }
-
-  .exp-card__video-wrap {
-    aspect-ratio: 9 / 16;
-  }
-}
-
-@media (max-width: 480px) {
+/* Columna unica desde aca: cubre los celulares reales (~390-430px) y
+   tablets chicas. El full-bleed del video y el padding-right reducido
+   viven en el MISMO breakpoint porque la formula del margin-right del
+   video-wrap depende de que --space-4 sea el padding-right vigente. */
+@media (max-width: 768px) {
   .experiencias__inner {
     padding-right: var(--space-4);
   }
@@ -297,5 +283,23 @@
     margin-left: calc(-1 * var(--container-pad));
     margin-right: calc(-1 * var(--space-4));
     width: calc(100% + var(--container-pad) + var(--space-4));
+  }
+}
+
+@media (max-width: 640px) {
+  .experiencias__grid {
+    gap: var(--space-4);
+  }
+
+  .experiencias__title {
+    font-size: var(--text-2xl);
+  }
+
+  .experiencias__header {
+    margin-bottom: var(--space-8);
+  }
+
+  .exp-card__video-wrap {
+    aspect-ratio: 9 / 16;
   }
 }
