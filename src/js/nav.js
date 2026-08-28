@@ -2,23 +2,37 @@ export function initNav() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
-  const sections = document.querySelectorAll('[data-nav-theme]');
-  if (!sections.length) return;
+  // Deteccion granular: en vez de un tema fijo por seccion, cuenta cuantos
+  // elementos oscuros (hero + videos de experiencias) estan intersectando
+  // la franja izquierda de la pantalla donde vive el nav.
+  const darkElements = document.querySelectorAll('.hero, .exp-card__video-wrap');
 
   header.setAttribute('data-theme', 'dark');
 
-  const observer = new IntersectionObserver((entries) => {
+  // Set en vez de contador: un contador global +1/-1 no distingue QUE
+  // elemento cambio, asi que la entrada inicial "false" de un video
+  // puede descontar el +1 que puso el hero (o cualquier otro elemento),
+  // dejando el nav trabado en un tema incorrecto. El Set trackea el
+  // estado real por elemento.
+  const intersectingDark = new Set();
+
+  const darkObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        header.setAttribute('data-theme', entry.target.dataset.navTheme);
+        intersectingDark.add(entry.target);
+      } else {
+        intersectingDark.delete(entry.target);
       }
     });
+    header.setAttribute('data-theme', intersectingDark.size > 0 ? 'dark' : 'light');
   }, {
-    rootMargin: '0px 0px -80% 0px',
-    threshold: 0,
+    // Encoge el root al ~30% izquierdo: cubre los 3 anchos de .site-header
+    // segun breakpoint (200px / 130px / 90px) sin depender del ancho exacto.
+    rootMargin: '0px -70% 0px 0px',
+    threshold: 0.1,
   });
 
-  sections.forEach(section => observer.observe(section));
+  darkElements.forEach(el => darkObserver.observe(el));
 
   const fill = document.querySelector('.nav__progress-fill');
   if (fill) {

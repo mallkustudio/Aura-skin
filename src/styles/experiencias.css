@@ -284,4 +284,18 @@
     grid-template-columns: 1fr;
     grid-template-areas: none;
   }
+
+  /* Video full-bleed (edge to edge, como el hero). overflow:visible porque
+     .exp-card--video usa overflow:hidden para redondear esquinas, lo que
+     recortaría el sangrado; a este ancho el redondeo no se nota igual
+     (título/contenido comparten el color de fondo de la página). */
+  .exp-card--video {
+    overflow: visible;
+  }
+
+  .exp-card--video .exp-card__video-wrap {
+    margin-left: calc(-1 * var(--container-pad));
+    margin-right: calc(-1 * var(--space-4));
+    width: calc(100% + var(--container-pad) + var(--space-4));
+  }
 }
