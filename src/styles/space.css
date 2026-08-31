@@ -41,13 +41,15 @@
   color: var(--color-text-muted);
 }
 
-/* Photo grid: 1 tall left + 2 stacked right */
+/* Photo grid: 2x2 simétrico — las 4 fotos reales son todas de orientación
+   vertical (incluida la de detalle de productos), así que un mosaico
+   parejo respeta mejor su encuadre que forzar una imagen ancha/panorámica. */
 .space__grid {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: var(--space-3);
-  height: 600px;
+  height: 760px;
 }
 
 .space__item {
@@ -55,10 +57,6 @@
   border-radius: 12px;
   margin: 0;
   background: var(--color-border);
-}
-
-.space__item--main {
-  grid-row: span 2;
 }
 
 .space__item img {
@@ -77,20 +75,16 @@
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .space__grid {
-    height: 440px;
+    height: 560px;
   }
 }
 
 @media (max-width: 640px) {
   .space__grid {
     grid-template-columns: 1fr;
-    grid-template-rows: 280px 200px 200px;
+    grid-template-rows: repeat(4, 240px);
     height: auto;
     gap: var(--space-2);
-  }
-
-  .space__item--main {
-    grid-row: auto;
   }
 
   .space__title {
