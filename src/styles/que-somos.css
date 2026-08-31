@@ -37,23 +37,18 @@
   color: var(--color-text-muted);
 }
 
-/* ---- Asymmetric image collage ---- */
-/* Structure: img1 (tall portrait, left) | stack of img2+img3 (right, offset down) */
+/* ---- Photo grid: 2x2 simétrico ---- */
+/* Las 4 fotos son cuadradas (1:1) y ya traen el texto de marca
+   (mente/rostro/alma/cuerpo) quemado en la imagen — un mosaico parejo
+   respeta ese encuadre nativo sin recortar las palabras. */
 .que-somos__gallery {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-3);
-  align-items: start;
-}
-
-.que-somos__stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding-top: var(--space-10);
 }
 
 .qs-img {
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 12px;
   margin: 0;
@@ -73,18 +68,6 @@
   transform: scale(1.04);
 }
 
-.qs-img--main {
-  aspect-ratio: 3 / 4;
-}
-
-.qs-img--b {
-  aspect-ratio: 4 / 3;
-}
-
-.qs-img--c {
-  aspect-ratio: 4 / 3;
-}
-
 /* ---- Responsive ---- */
 @media (max-width: 1000px) {
   .que-somos__inner {
@@ -102,33 +85,10 @@
   .que-somos__title {
     font-size: var(--text-2xl);
   }
-
-  .que-somos__stack {
-    padding-top: 0;
-  }
-
-}
-
-@media (max-width: 640px) {
-  .que-somos__gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .que-somos__stack {
-    flex-direction: row;
-  }
-
-  .qs-img--main {
-    aspect-ratio: 3 / 2;
-  }
 }
 
 @media (max-width: 480px) {
   .que-somos__inner {
     padding-right: var(--space-4);
-  }
-
-  .que-somos__stack {
-    flex-direction: column;
   }
 }
