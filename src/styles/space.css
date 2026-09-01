@@ -79,11 +79,25 @@
   }
 }
 
+/* ≤768px: 2x2 igual que desktop, en vez de columna única. height:auto
+   porque las filas ahora son "auto" (dimensionadas por aspect-ratio de
+   cada imagen), no por una altura fija de contenedor como en desktop. */
+@media (max-width: 768px) {
+  .space__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-3);
+    height: auto;
+  }
+
+  .space__item {
+    aspect-ratio: 1 / 1;
+  }
+}
+
 @media (max-width: 640px) {
   .space__grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 240px);
-    height: auto;
     gap: var(--space-2);
   }
 
