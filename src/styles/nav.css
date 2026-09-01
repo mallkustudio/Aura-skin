@@ -33,7 +33,7 @@
   font-weight: 400;
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-bg);
+  color: var(--color-text-muted);
   position: relative;
   padding-left: 20px;
   transition: color 0.3s ease;

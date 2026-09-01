@@ -15,45 +15,27 @@ export function initNav() {
   // dejando el nav trabado en un tema incorrecto. El Set trackea el
   // estado real por elemento.
   const intersectingDark = new Set();
-  let darkObserver = null;
 
-  // rootMargin en PX reales del nav, no en % del viewport: un % fijo
-  // (ej. 30%) aproxima mal el ancho real del nav (200/130/90px segun
-  // breakpoint) — en una pantalla de 1440px, 30% son 432px, mas del
-  // doble del nav real (200px). Cualquier video que asome en esa franja
-  // de mas fuerza "dark" aunque el nav este parado sobre fondo cream.
-  // Se recalcula en resize porque --nav-width cambia por breakpoint.
-  function buildDarkObserver() {
-    if (darkObserver) darkObserver.disconnect();
-    intersectingDark.clear();
-
-    const navWidth = header.getBoundingClientRect().width;
-    const rightMargin = -(window.innerWidth - navWidth);
-
-    darkObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          intersectingDark.add(entry.target);
-        } else {
-          intersectingDark.delete(entry.target);
-        }
-      });
-      header.setAttribute('data-theme', intersectingDark.size > 0 ? 'dark' : 'light');
-    }, {
-      rootMargin: `0px ${rightMargin}px 0px 0px`,
-      threshold: 0,
+  // Sin rootMargin: el criterio no es "el elemento esta en la franja del
+  // nav" sino "el elemento oscuro esta visible en pantalla" — si un video
+  // de experiencias esta en pantalla (en cualquier columna), el nav fijo
+  // a la izquierda tambien lo esta viendo. Restringir a una franja de
+  // ancho igual al nav dejaba afuera los videos que arrancan despues del
+  // nav (ej. las cards de la derecha en el grid de experiencias).
+  const darkObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        intersectingDark.add(entry.target);
+      } else {
+        intersectingDark.delete(entry.target);
+      }
     });
-
-    darkElements.forEach(el => darkObserver.observe(el));
-  }
-
-  buildDarkObserver();
-
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(buildDarkObserver, 200);
+    header.setAttribute('data-theme', intersectingDark.size > 0 ? 'dark' : 'light');
+  }, {
+    threshold: 0.15,
   });
+
+  darkElements.forEach(el => darkObserver.observe(el));
 
   const fill = document.querySelector('.nav__progress-fill');
   if (fill) {
