@@ -85,6 +85,27 @@
   .que-somos__title {
     font-size: var(--text-2xl);
   }
+
+  /* Full-bleed edge-to-edge, apiladas — igual que los videos de
+     Experiencias. NOTA: el padding-right real de .que-somos__inner
+     sigue en --container-pad (80px) hasta ≤480px, así que esta fórmula
+     (pensada para --space-4 = 16px) queda corta por 64px del lado
+     derecho entre 481-768px — mismo caso que se corrigió antes para
+     los videos. No lo ajusté todavía porque es un experimento a
+     revisar antes de decidir el fix definitivo. */
+  .que-somos__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-left: calc(-1 * var(--container-pad));
+    margin-right: calc(-1 * var(--space-4));
+    width: calc(100% + var(--container-pad) + var(--space-4));
+  }
+
+  .qs-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 @media (max-width: 480px) {
