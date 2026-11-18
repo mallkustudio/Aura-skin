@@ -5,7 +5,7 @@ export function initNav() {
   // Deteccion granular: en vez de un tema fijo por seccion, cuenta cuantos
   // elementos oscuros (hero + videos de experiencias) estan intersectando
   // la franja izquierda de la pantalla donde vive el nav.
-  const darkElements = document.querySelectorAll('.hero, .exp-card__video-wrap');
+  const darkElements = document.querySelectorAll('.hero, .exp-card__video-wrap, .site-footer');
 
   header.setAttribute('data-theme', 'dark');
 
