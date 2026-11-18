@@ -27,7 +27,7 @@
 
 .que-somos__title em {
   font-style: italic;
-  color: var(--color-accent);
+  color: var(--color-accent-display);
 }
 
 .que-somos__desc {

@@ -42,7 +42,7 @@
 }
 
 .servicio__back:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .servicio__title {
@@ -136,14 +136,14 @@
 }
 
 .servicio__cta--primary {
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
   color: #ffffff;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent-strong);
 }
 
 .servicio__cta--primary:hover {
-  background: #9a8266;
-  border-color: #9a8266;
+  background: var(--color-accent-strong-hover);
+  border-color: var(--color-accent-strong-hover);
 }
 
 .servicio__cta--secondary {
@@ -154,7 +154,7 @@
 
 .servicio__cta--secondary:hover {
   border-color: var(--color-accent);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 /* ---- Imagen ---- */

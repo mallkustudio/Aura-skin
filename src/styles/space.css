@@ -31,7 +31,7 @@
 
 .space__title em {
   font-style: italic;
-  color: var(--color-accent);
+  color: var(--color-accent-display);
 }
 
 .space__desc {

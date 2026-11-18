@@ -8,7 +8,7 @@
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   margin-bottom: var(--space-4);
 }
 

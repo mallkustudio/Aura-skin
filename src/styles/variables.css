@@ -3,9 +3,14 @@
   --color-bg:           #F7F4EE;   /* warm cream — page background */
   --color-bg-dark:      #1E1C19;   /* deep charcoal — footer, dark sections */
   --color-text:         #2B2B2B;   /* primary text */
-  --color-text-muted:   #7A746E;   /* secondary / caption text */
+  --color-text-muted:   #736E68;   /* secondary / caption text (4,60:1 sobre bg) */
   --color-text-light:   #FFFFFF;   /* text on dark backgrounds */
   --color-accent:       #A89070;   /* warm gold — links, hover, CTAs */
+  /* Variantes de accent SOLO para texto/botón (contraste WCAG). --color-accent queda para líneas, bordes y detalles */
+  --color-accent-text:   #7D6B53;   /* texto chico sobre bg (4,67:1) */
+  --color-accent-display: #A18A6C;  /* <em> de títulos grandes (3,00:1) */
+  --color-accent-strong: #857258;   /* fondo botón Reservar, texto blanco (4,62:1) */
+  --color-accent-strong-hover: #75644D; /* hover del botón (5,70:1) */
   --color-overlay:      rgba(20, 18, 15, 0.45); /* hero video overlay */
   --color-nav-bg:       rgba(247, 244, 238, 0.97); /* nav after scroll */
   --color-border:       rgba(43, 43, 43, 0.10);
