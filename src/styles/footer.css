@@ -4,49 +4,57 @@
 .site-footer {
   background: var(--color-bg-dark);
   color: var(--color-bg);
-  padding: var(--space-16) 0 var(--space-10);
+  padding: var(--space-10) 0 var(--space-8);
   text-align: center;
 }
 
 .site-footer__inner {
-  max-width: 720px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 var(--container-pad);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-8);
 }
 
-/* El logo es 600x900 con el isotipo centrado y mucho aire transparente.
-   A 280px de ancho el isotipo visible mide ~140px; el wrapper recorta
-   el alto sobrante. */
+/* ---- Logo ----
+   El archivo es 600x900 y el texto visible ocupa x 151–442, y 384–485.
+   El wrapper recorta exactamente esa zona: --logo-w es el ancho al que se
+   dibuja la imagen completa (309px → texto visible ≈ 150px). */
 .site-footer__logo {
-  width: 280px;
-  height: 64px;
+  --logo-w: 309px;
+  width: calc(var(--logo-w) * 291 / 600);
+  height: calc(var(--logo-w) * 101 / 600);
   overflow: hidden;
+  margin-bottom: var(--space-6);
 }
 
 .site-footer__logo img {
   display: block;
-  width: 280px;
+  width: var(--logo-w);
+  max-width: none;
   height: auto;
-  margin-top: -170px;
+  margin-left: calc(var(--logo-w) * -151 / 600);
+  margin-top: calc(var(--logo-w) * -384 / 600);
   opacity: 0.92;
 }
 
-/* ---- Datos de contacto ---- */
+/* ---- Datos de contacto ----
+   Celular: columna. Desktop (>=768px): una fila centrada que envuelve. */
 .site-footer__contact {
   font-style: normal;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  align-items: center;
+  gap: var(--space-2);
   font-size: var(--text-sm);
   font-weight: 300;
   line-height: var(--leading-base);
   letter-spacing: 0.02em;
 }
 
+/* Texto en línea: "Cómo llegar" sigue a la dirección si entra
+   y baja a la línea siguiente si no. */
 .site-footer__item {
   margin: 0;
 }
@@ -54,6 +62,7 @@
 .site-footer__link {
   display: inline-flex;
   align-items: center;
+  vertical-align: middle;
   min-height: 44px;
   padding: 0 var(--space-2);
   color: var(--color-bg);
@@ -75,7 +84,8 @@
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  padding: var(--space-4) var(--space-8);
+  margin-top: var(--space-6);
+  padding: 0 var(--space-8);
   border-radius: 12px;
   background: var(--color-accent-strong);
   color: #ffffff;
@@ -103,21 +113,30 @@
 
 /* ---- Línea final ---- */
 .site-footer__legal {
-  margin: var(--space-4) 0 0;
+  margin: var(--space-6) 0 0;
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wide);
   opacity: 0.7;
 }
 
-/* ---- Mobile: una columna, toques cómodos ---- */
-@media (max-width: 640px) {
-  .site-footer {
-    padding: var(--space-12) 0 var(--space-8);
+/* ---- Desktop: contacto en una fila ---- */
+@media (min-width: 768px) {
+  .site-footer__contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2) var(--space-6);
   }
+}
 
+/* ---- Celular ---- */
+@media (max-width: 640px) {
   .site-footer__inner {
     padding: 0 var(--space-5);
-    gap: var(--space-6);
+  }
+
+  .site-footer__logo {
+    --logo-w: 268px; /* texto visible ≈ 130px */
   }
 
   .site-footer__cta {
