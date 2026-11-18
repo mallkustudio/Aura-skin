@@ -1,0 +1,12 @@
+{
+  "etiqueta": "Qué somos",
+  "titulo": "Cuidado que se siente",
+  "tituloDestacado": "real",
+  "descripcion": "Somos un espacio dedicado al cuidado integral de la piel y el bienestar, donde la técnica se combina con calma y atención al detalle. Cada tratamiento está pensado para ofrecer resultados reales, equilibrio, renovación y una sensación de ligereza que se siente desde la primera sesión. Una propuesta para quienes buscan un momento de calidad, presencia y cuidado genuino.",
+  "imagenes": [
+    { "src": "/images/que-somos/quesomos-mente.webp", "alt": "Tratamiento de bienestar en Aura Skin & Spa", "ancho": 1296, "alto": 1165 },
+    { "src": "/images/que-somos/quesomos-rostro.webp", "alt": "Tratamiento facial en Aura Skin & Spa", "ancho": 1086, "alto": 1163 },
+    { "src": "/images/que-somos/quesomos-alma.webp", "alt": "Terapia holística en Aura Skin & Spa", "ancho": 1122, "alto": 1087 },
+    { "src": "/images/que-somos/quesomos-cuerpo.webp", "alt": "Masaje corporal en Aura Skin & Spa", "ancho": 1086, "alto": 1223 }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "etiqueta": "Nuestro espacio",
+  "titulo": "Un refugio de",
+  "tituloDestacado": "calma",
+  "descripcion": "Cada rincón fue diseñado para invitarte a soltar. Materiales naturales, luz tamizada y una atmósfera que transforma el entorno en una experiencia sensorial completa.",
+  "imagenes": [
+    { "src": "/images/espacio/espacio-1.webp", "alt": "Sala de tratamientos con cortinas blancas y luz natural", "ancho": 960, "alto": 1280 },
+    { "src": "/images/espacio/espacio-2.webp", "alt": "Ambiente cálido con plantas colgantes y velas encendidas", "ancho": 1086, "alto": 1448 },
+    { "src": "/images/espacio/espacio-3.webp", "alt": "Sala de tratamientos con iluminación cálida y tenue", "ancho": 1200, "alto": 1600 },
+    { "src": "/images/espacio/espacio-4.webp", "alt": "Canasta con productos de cuidado capilar y corporal", "ancho": 960, "alto": 1280 }
+  ]
+}

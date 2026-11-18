@@ -1,0 +1,13 @@
+{
+  "logo": {
+    "src": "/images/aura-logo.webp",
+    "alt": "Aura Skin",
+    "ancho": 600,
+    "alto": 900
+  },
+  "frase": [
+    "Respira profundo.",
+    "El resto corre por nuestra cuenta."
+  ],
+  "bajada": "El Primer Head Spa de Argentina"
+}

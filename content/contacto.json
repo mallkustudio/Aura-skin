@@ -1,0 +1,17 @@
+{
+  "etiqueta": "Contacto",
+  "titulo": "Conversemos",
+  "descripcion": "Escribinos para coordinar tu turno o resolver cualquier duda.",
+  "whatsapp": {
+    "texto": "Escribinos por WhatsApp",
+    "mensaje": "Hola, quiero información sobre los tratamientos"
+  },
+  "reservas": {
+    "texto": "Reservá tu turno",
+    "ariaLabel": "Reservá tu turno en AgendaPro"
+  },
+  "instagram": {
+    "ariaLabel": "Seguinos en Instagram:"
+  },
+  "mapaTitulo": "Ubicación de Aura Skin —"
+}
