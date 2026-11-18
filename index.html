@@ -7,6 +7,10 @@
   <meta name="description" content="Aura Skin &amp; Spa en Buenos Aires: head spa, tratamientos faciales, masajes y terapias holísticas en Paraguay 1307, CABA. Reservá tu turno." />
   <meta name="theme-color" content="#F7F4EE" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&display=swap" />
+  <link rel="preload" as="image" href="/images/posters/hero.webp" />
 
   <!-- Open Graph / redes. og:url, og:image y canonical requieren URL absoluta: agregar cuando esté el dominio -->
   <meta property="og:type" content="website" />
@@ -83,18 +87,15 @@
       <!-- Video principal: colocar el archivo en public/videos/hero.mp4 -->
       <video
         class="hero__video"
+        data-src="/videos/hero.mp4"
+        poster="/images/posters/hero.webp"
         autoplay
         muted
         loop
         playsinline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
-      >
-        <source
-          src="/videos/hero.mp4"
-          type="video/mp4"
-        />
-      </video>
+      ></video>
     </div>
 
     <!-- Capa 2: Overlay -->
@@ -105,13 +106,18 @@
 
       <img
         class="hero__logo"
-        src="/images/aura-logo.png"
+        src="/images/aura-logo.webp"
         alt="Aura Skin"
+        width="600"
+        height="900"
+        fetchpriority="high"
       />
 
-      <h1 class="hero__headline">
+      <h1 class="sr-only">Aura Skin &amp; Spa: head spa y tratamientos de bienestar en Buenos Aires</h1>
+
+      <p class="hero__headline">
         Respira profundo.<br>El resto corre por nuestra cuenta.
-      </h1>
+      </p>
       <p class="hero__subheadline">El Primer Head Spa de Argentina</p>
     </div>
 
@@ -141,12 +147,14 @@
             <div class="exp-card__video-wrap">
               <video
                 class="exp-card__video"
-                src="/videos/experiencias/head-spa.mp4"
+                data-src="/videos/experiencias/head-spa.mp4"
+                poster="/images/posters/head-spa.webp"
                 autoplay
                 muted
                 loop
                 playsinline
-                preload="none"
+                preload="metadata"
+                aria-hidden="true"
               ></video>
             </div>
             <div class="exp-card__content">
@@ -165,12 +173,14 @@
             <div class="exp-card__video-wrap">
               <video
                 class="exp-card__video"
-                src="/videos/experiencias/facial.mp4"
+                data-src="/videos/experiencias/facial.mp4"
+                poster="/images/posters/facial.webp"
                 autoplay
                 muted
                 loop
                 playsinline
-                preload="none"
+                preload="metadata"
+                aria-hidden="true"
               ></video>
             </div>
             <div class="exp-card__content">
@@ -189,12 +199,14 @@
             <div class="exp-card__video-wrap">
               <video
                 class="exp-card__video"
-                src="/videos/experiencias/terapia-holistica.mp4"
+                data-src="/videos/experiencias/terapia-holistica.mp4"
+                poster="/images/posters/terapia-holistica.webp"
                 autoplay
                 muted
                 loop
                 playsinline
-                preload="none"
+                preload="metadata"
+                aria-hidden="true"
               ></video>
             </div>
             <div class="exp-card__content">
@@ -257,30 +269,42 @@
         <div class="space__grid">
           <figure class="space__item">
             <img
-              src="/images/espacio/espacio-1.jpeg"
+              src="/images/espacio/espacio-1.webp"
               alt="Sala de tratamientos con cortinas blancas y luz natural"
+              width="960"
+              height="1280"
               loading="lazy"
+              decoding="async"
             />
           </figure>
           <figure class="space__item">
             <img
-              src="/images/espacio/espacio-2.jpeg"
+              src="/images/espacio/espacio-2.webp"
               alt="Ambiente cálido con plantas colgantes y velas encendidas"
+              width="1086"
+              height="1448"
               loading="lazy"
+              decoding="async"
             />
           </figure>
           <figure class="space__item">
             <img
-              src="/images/espacio/espacio-3.jpeg"
+              src="/images/espacio/espacio-3.webp"
               alt="Sala de tratamientos con iluminación cálida y tenue"
+              width="1200"
+              height="1600"
               loading="lazy"
+              decoding="async"
             />
           </figure>
           <figure class="space__item">
             <img
-              src="/images/espacio/espacio-4.jpeg"
+              src="/images/espacio/espacio-4.webp"
               alt="Canasta con productos de cuidado capilar y corporal"
+              width="960"
+              height="1280"
               loading="lazy"
+              decoding="async"
             />
           </figure>
         </div>
@@ -300,30 +324,42 @@
         <div class="que-somos__gallery">
           <figure class="qs-img">
             <img
-              src="/images/que-somos/quesomos-mente.jpeg"
+              src="/images/que-somos/quesomos-mente.webp"
               alt="Tratamiento de bienestar en Aura Skin & Spa"
+              width="1296"
+              height="1165"
               loading="lazy"
+              decoding="async"
             />
           </figure>
           <figure class="qs-img">
             <img
-              src="/images/que-somos/quesomos-rostro.jpeg"
+              src="/images/que-somos/quesomos-rostro.webp"
               alt="Tratamiento facial en Aura Skin & Spa"
+              width="1086"
+              height="1163"
               loading="lazy"
+              decoding="async"
             />
           </figure>
           <figure class="qs-img">
             <img
-              src="/images/que-somos/quesomos-alma.jpeg"
+              src="/images/que-somos/quesomos-alma.webp"
               alt="Terapia holística en Aura Skin & Spa"
+              width="1122"
+              height="1087"
               loading="lazy"
+              decoding="async"
             />
           </figure>
           <figure class="qs-img">
             <img
-              src="/images/que-somos/quesomos-cuerpo.jpeg"
+              src="/images/que-somos/quesomos-cuerpo.webp"
               alt="Masaje corporal en Aura Skin & Spa"
+              width="1086"
+              height="1223"
               loading="lazy"
+              decoding="async"
             />
           </figure>
         </div>
@@ -408,7 +444,7 @@
             class="contacto__card"
             target="_blank"
             rel="noopener"
-            aria-label="Seguinos en Instagram"
+            aria-label="Seguinos en Instagram: @aura.skin_spa"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5"/>
