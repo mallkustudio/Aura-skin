@@ -1,0 +1,26 @@
+{
+  "etiqueta": "Nuestras experiencias",
+  "titulo": "Rituales para reconectar",
+  "descripcion": "Cada tratamiento es una invitación a soltar el ritmo cotidiano y volver a vos.",
+  "textoBoton": "Reservar",
+  "cards": [
+    {
+      "titulo": "Head Spa",
+      "video": "/videos/experiencias/head-spa.mp4",
+      "poster": "/images/posters/head-spa.webp",
+      "descripcion": "Head spa: un ritual que combina diferentes técnicas de bienestar y cuidado, en un ambiente cálido y relajante. La experiencia incluye máscaras hidratantes faciales, masajes relajantes combinados con piedras calientes, exfoliación e hidratación de pies y manos, spa capilar con masajes craneales. Para cerrar, una infusión que invita a prolongar esa sensación de calma. Una experiencia sensorial completa, creada para desconectar de la rutina, reconectar con vos y disfrutar de un momento de bienestar integral."
+    },
+    {
+      "titulo": "Tratamientos Faciales",
+      "video": "/videos/experiencias/facial.mp4",
+      "poster": "/images/posters/facial.webp",
+      "descripcion": "Ofrecemos tratamientos faciales personalizados para cuidar, renovar y potenciar la belleza natural de tu piel. Realizamos higiene facial, Dermaplaning, Dermapen, radiofrecuencia, microdermoabrasión, ozonoterapia, combinando técnicas profesionales, tecnología y productos seleccionados según las necesidades de cada piel. Un espacio pensado para que cuides tu piel y disfrutes de un momento de bienestar."
+    },
+    {
+      "titulo": "Terapias Holísticas y masajes",
+      "video": "/videos/experiencias/terapia-holistica.mp4",
+      "poster": "/images/posters/terapia-holistica.webp",
+      "descripcion": "Un espacio creado para conectar cuerpo, mente y energía. Ofrecemos masajes relajantes, masajes descontracturantes, masajes con piedras calientes, acupuntura y Reiki, en un ambiente cálido y armonioso. Experiencias pensadas para liberar tensiones y mejorar la calidad del sueño."
+    }
+  ]
+}

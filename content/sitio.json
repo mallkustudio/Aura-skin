@@ -1,0 +1,24 @@
+{
+  "nombre": "Aura Skin & Spa",
+  "descripcion": "Head spa, tratamientos faciales, masajes y terapias holísticas en Buenos Aires.",
+  "whatsapp": {
+    "numero": "5491165852093",
+    "display": "+54 9 11 6585-2093"
+  },
+  "instagram": {
+    "usuario": "@aura.skin_spa",
+    "url": "https://www.instagram.com/aura.skin_spa"
+  },
+  "reservas": {
+    "url": "https://link.agendapro.com/ar/auraskin/0301d037"
+  },
+  "direccion": {
+    "calle": "Paraguay 1307",
+    "cp": "C1057AAU",
+    "localidad": "Ciudad Autónoma de Buenos Aires",
+    "corta": "CABA",
+    "pais": "AR",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Paraguay+1307+CABA",
+    "mapsEmbedUrl": "https://www.google.com/maps?q=Paraguay+1307,+CABA,+Buenos+Aires&output=embed"
+  }
+}

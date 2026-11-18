@@ -1,0 +1,12 @@
+{
+  "logo": {
+    "src": "/images/aura-logo.webp",
+    "alt": "Aura Skin & Spa",
+    "ancho": 600,
+    "alto": 900
+  },
+  "textoComoLlegar": "Cómo llegar",
+  "mensajeWhatsapp": "Hola, quiero información",
+  "textoBoton": "Reservá tu turno",
+  "anio": "2026"
+}
